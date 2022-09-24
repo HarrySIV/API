@@ -31,13 +31,15 @@ export const getAnItem: RequestHandler<{ iid: string }> = async (req, res, next)
 };
 
 export const createItem: RequestHandler = async (req, res, next) => {
-  const { name, description, price, _id, cooking_time } = req.body; 
+  const { name, description, price, _id, cooking_time, hasToppings, hasSizes } = req.body; 
   const createdItem = new Item({      //gets information from reqest and creates new instance
     name,
     description,
     price,
     _id,
     cooking_time,
+    hasToppings,
+    hasSizes
   });
 
   try {
@@ -68,7 +70,7 @@ export const deleteItem: RequestHandler = async (req, res, next) => {
 };
 
 export const updateItem: RequestHandler = async (req, res, next) => {
-  const { name, description, price, _id, cooking_time } = req.body;
+  const { name, description, price, _id, cooking_time, hasToppings, hasSizes } = req.body;
 
   let item;
   try {
@@ -80,6 +82,8 @@ export const updateItem: RequestHandler = async (req, res, next) => {
         price,
         _id,
         cooking_time,
+        hasToppings,
+        hasSizes
       }
     );
   } catch (error: unknown) {

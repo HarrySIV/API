@@ -6,6 +6,8 @@ export interface IItem {
   price: number;
   _id: string;
   cooking_time: string;
+  hasToppings: boolean;
+  hasSizes: boolean;
 }
 
 export const itemSchema: Schema = new Schema({
@@ -14,6 +16,8 @@ export const itemSchema: Schema = new Schema({
   price: { type: Number },
   _id: { type: String },
   cooking_time: { type: String },
+  hasToppings: { type: Boolean },
+  hasSizes: { type: Boolean },
 });
 
 export default mongoose.model<IItem>('Item', itemSchema);
