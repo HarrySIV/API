@@ -5,7 +5,7 @@ export interface IOrder {
   customer_name: string;
   phone_number: string;
   _id: string;
-  items: IItem[];
+  items: { item: IItem; quantity: number }[];
   total: number;
 }
 
@@ -13,7 +13,7 @@ const orderSchema: Schema = new Schema({
   customer_name: { type: String },
   phone_number: { type: String },
   _id: { type: String },
-  items: [itemSchema],
+  items: { type: [{ item: itemSchema, quantity: Number }] },
   total: { type: Number },
 });
 

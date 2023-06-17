@@ -16,7 +16,7 @@ export const itemSchema: Schema = new Schema({
   price: { type: Number },
   _id: { type: String },
   cooking_time: { type: String },
-  hasToppings: { type: Boolean },
+  options: { type: [{ name: String, price: Number }] },
   hasSizes: { type: Boolean },
 });
 
