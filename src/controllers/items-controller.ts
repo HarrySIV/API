@@ -22,7 +22,7 @@ export const getAnItem: RequestHandler<{ iid: string }> = async (req, res, next)
     item = await Item.findById(itemID);  //find an item from id
   } catch (error: unknown) {
     if (error instanceof Error){
-      res.status(500).json( {message: `${error.message}` })
+      res.status(500).json({ message: `${error.message}` })
     }
     return next(error);
   }
