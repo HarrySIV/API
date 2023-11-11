@@ -12,7 +12,7 @@ export const dealSchema: Schema = new Schema({
   name: { type: String },
   img: { type: String },
   _id: { type: String },
-  items: { type: [Number] },
+  items: [{ id: Number, quantity: Number, size: String }],
   total: { type: Number },
 });
 
