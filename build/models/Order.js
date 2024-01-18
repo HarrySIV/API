@@ -32,11 +32,11 @@ const orderSchema = new mongoose_1.Schema({
     items: {
         type: [
             {
-                itemID: Number,
-                itemPrice: Number,
-                items: [Item_1.itemSchema],
-                quantity: Number,
-                type: String,
+                itemID: { type: Number },
+                itemPrice: { type: Number },
+                items: { type: [Item_1.itemSchema] },
+                quantity: { type: Number },
+                type: { type: String },
             },
         ],
     },

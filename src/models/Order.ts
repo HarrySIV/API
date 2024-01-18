@@ -24,11 +24,11 @@ const orderSchema: Schema = new Schema({
   items: {
     type: [
       {
-        itemID: Number,
-        itemPrice: Number,
-        items: [itemSchema],
-        quantity: Number,
-        type: String,
+        itemID: { type: Number },
+        itemPrice: { type: Number },
+        items: { type: [itemSchema] },
+        quantity: { type: Number },
+        type: { type: String },
       },
     ],
   },

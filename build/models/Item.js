@@ -31,26 +31,34 @@ exports.itemSchema = new mongoose_1.Schema({
     price: { type: Number },
     _id: { type: String },
     cooking_time: { type: String },
-    options: { type: [{ name: String, price: Number, checked: Boolean }] },
+    options: {
+        type: [
+            {
+                name: { type: String },
+                price: { type: Number },
+                checked: { type: Boolean },
+            },
+        ],
+    },
     flavors: {
         type: [
             {
-                isValid: Boolean,
-                checked: Boolean,
-                id: String,
-                value: String,
+                isValid: { type: Boolean },
+                checked: { type: Boolean },
+                id: { type: String },
+                value: { type: String },
             },
         ],
     },
     sizes: {
         type: [
             {
-                isValid: Boolean,
-                checked: Boolean,
-                id: String,
-                value: String,
-                price: Number,
-                inches: Number,
+                isValid: { type: Boolean },
+                checked: { type: Boolean },
+                id: { type: String },
+                value: { type: String },
+                price: { type: Number },
+                inches: { type: Number },
             },
         ],
     },
