@@ -26,41 +26,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.itemSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 exports.itemSchema = new mongoose_1.Schema({
-    name: { type: String },
-    description: { type: String },
-    price: { type: Number },
-    _id: { type: String },
-    cooking_time: { type: String },
-    options: {
-        type: [
-            {
-                name: { type: String },
-                price: { type: Number },
-                checked: { type: Boolean },
-            },
-        ],
-    },
-    flavors: {
-        type: [
-            {
-                isValid: { type: Boolean },
-                checked: { type: Boolean },
-                id: { type: String },
-                value: { type: String },
-            },
-        ],
-    },
-    sizes: {
-        type: [
-            {
-                isValid: { type: Boolean },
-                checked: { type: Boolean },
-                id: { type: String },
-                value: { type: String },
-                price: { type: Number },
-                inches: { type: Number },
-            },
-        ],
-    },
+    name: String,
+    description: String,
+    price: Number,
+    _id: String,
+    cooking_time: String,
+    options: [
+        {
+            name: String,
+            price: Number,
+            checked: Boolean,
+        },
+    ],
+    flavors: [
+        {
+            isValid: Boolean,
+            checked: Boolean,
+            id: String,
+            value: String,
+        },
+    ],
+    sizes: [
+        {
+            isValid: Boolean,
+            checked: Boolean,
+            id: String,
+            value: String,
+            price: Number,
+            inches: Number,
+        },
+    ],
 });
 exports.default = mongoose_1.default.model('Item', exports.itemSchema);

@@ -26,20 +26,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const Item_1 = require("./Item");
 const orderSchema = new mongoose_1.Schema({
-    customer_name: { type: String },
-    phone_number: { type: String },
-    _id: { type: String },
-    items: {
-        type: [
-            {
-                itemID: { type: Number },
-                itemPrice: { type: Number },
-                items: { type: [Item_1.itemSchema] },
-                quantity: { type: Number },
-                type: { type: String },
-            },
-        ],
-    },
+    customer_name: String,
+    phone_number: String,
+    _id: String,
+    orderItems: [
+        {
+            _id: Number,
+            itemPrice: Number,
+            items: { type: [Item_1.itemSchema] },
+            quantity: Number,
+            type: { type: String },
+        },
+    ],
     total: { type: Number },
 });
 exports.default = mongoose_1.default.model('Order', orderSchema);

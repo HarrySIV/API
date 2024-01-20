@@ -34,42 +34,36 @@ type TFlavor = {
 };
 
 export const itemSchema: Schema = new Schema({
-  name: { type: String },
-  description: { type: String },
-  price: { type: Number },
-  _id: { type: String },
-  cooking_time: { type: String },
-  options: {
-    type: [
-      {
-        name: { type: String },
-        price: { type: Number },
-        checked: { type: Boolean },
-      },
-    ],
-  },
-  flavors: {
-    type: [
-      {
-        isValid: { type: Boolean },
-        checked: { type: Boolean },
-        id: { type: String },
-        value: { type: String },
-      },
-    ],
-  },
-  sizes: {
-    type: [
-      {
-        isValid: { type: Boolean },
-        checked: { type: Boolean },
-        id: { type: String },
-        value: { type: String },
-        price: { type: Number },
-        inches: { type: Number },
-      },
-    ],
-  },
+  name: String,
+  description: String,
+  price: Number,
+  _id: String,
+  cooking_time: String,
+  options: [
+    {
+      name: String,
+      price: Number,
+      checked: Boolean,
+    },
+  ],
+  flavors: [
+    {
+      isValid: Boolean,
+      checked: Boolean,
+      id: String,
+      value: String,
+    },
+  ],
+  sizes: [
+    {
+      isValid: Boolean,
+      checked: Boolean,
+      id: String,
+      value: String,
+      price: Number,
+      inches: Number,
+    },
+  ],
 });
 
 export default mongoose.model<IItem>('Item', itemSchema);

@@ -4,7 +4,7 @@ import { IItem, itemSchema } from './Item';
 type TOrderItem = {
   itemID: number;
   itemPrice: number;
-  items: IItem[];
+  orderItems: IItem[];
   quantity: number;
   type: 'deal' | 'menu';
 };
@@ -18,20 +18,18 @@ export interface IOrder {
 }
 
 const orderSchema: Schema = new Schema({
-  customer_name: { type: String },
-  phone_number: { type: String },
-  _id: { type: String },
-  items: {
-    type: [
-      {
-        itemID: { type: Number },
-        itemPrice: { type: Number },
-        items: { type: [itemSchema] },
-        quantity: { type: Number },
-        type: { type: String },
-      },
-    ],
-  },
+  customer_name: String,
+  phone_number: String,
+  _id: String,
+  orderItems: [
+    {
+      _id: Number,
+      itemPrice: Number,
+      items: { type: [itemSchema] },
+      quantity: Number,
+      type: { type: String },
+    },
+  ],
   total: { type: Number },
 });
 

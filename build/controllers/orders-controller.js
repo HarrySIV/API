@@ -44,12 +44,13 @@ const getAnOrder = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
 });
 exports.getAnOrder = getAnOrder;
 const createOrder = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const { customer_name, phone_number, _id, items, total, } = req.body;
+    const { customer_name, phone_number, _id, orderItems, total, } = req.body;
+    console.log(req.body.orderItems[0].items);
     const createdOrder = new Order_1.default({
         customer_name,
         phone_number,
         _id,
-        items,
+        orderItems,
         total,
     });
     try {

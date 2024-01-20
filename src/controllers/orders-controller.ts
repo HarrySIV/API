@@ -40,20 +40,20 @@ export const createOrder: RequestHandler = async (req, res, next) => {
     customer_name,
     phone_number,
     _id,
-    items,
+    orderItems,
     total,
   }: {
     customer_name: string;
     phone_number: string;
     _id: string;
-    items: IItem;
+    orderItems: IItem[];
     total: number;
   } = req.body;
   const createdOrder = new Order({
     customer_name,
     phone_number,
     _id,
-    items,
+    orderItems,
     total,
   });
 
