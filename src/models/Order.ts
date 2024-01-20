@@ -25,12 +25,12 @@ const orderSchema: Schema = new Schema({
     {
       _id: Number,
       itemPrice: Number,
-      items: { type: [itemSchema] },
+      items: [{ type: itemSchema, _id: false }],
       quantity: Number,
       type: { type: String },
     },
   ],
-  total: { type: Number },
+  total: Number,
 });
 
 export default mongoose.model<IOrder>('Order', orderSchema);

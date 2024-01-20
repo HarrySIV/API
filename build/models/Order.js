@@ -33,11 +33,11 @@ const orderSchema = new mongoose_1.Schema({
         {
             _id: Number,
             itemPrice: Number,
-            items: { type: [Item_1.itemSchema] },
+            items: [{ type: Item_1.itemSchema, _id: false }],
             quantity: Number,
             type: { type: String },
         },
     ],
-    total: { type: Number },
+    total: Number,
 });
 exports.default = mongoose_1.default.model('Order', orderSchema);

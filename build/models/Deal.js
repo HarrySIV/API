@@ -26,10 +26,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dealSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 exports.dealSchema = new mongoose_1.Schema({
-    name: { type: String },
-    img: { type: String },
-    _id: { type: String },
+    name: String,
+    img: String,
+    _id: String,
     items: [{ id: Number, size: String }],
-    total: { type: Number },
+    total: Number,
 });
 exports.default = mongoose_1.default.model('Deal', exports.dealSchema);

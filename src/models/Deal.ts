@@ -9,11 +9,11 @@ export interface IDeal {
 }
 
 export const dealSchema: Schema = new Schema({
-  name: { type: String },
-  img: { type: String },
-  _id: { type: String },
+  name: String,
+  img: String,
+  _id: String,
   items: [{ id: Number, size: String }],
-  total: { type: Number },
+  total: Number,
 });
 
 export default mongoose.model<IDeal>('Deal', dealSchema);
