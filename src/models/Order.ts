@@ -25,7 +25,7 @@ const orderSchema: Schema = new Schema({
     {
       _id: Number,
       itemPrice: Number,
-      items: [{ type: itemSchema, _id: false }],
+      items: [{ type: itemSchema }],
       quantity: Number,
       type: { type: String },
     },

@@ -52,7 +52,6 @@ const createOrder = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         orderItems,
         total,
     });
-    console.log(createdOrder.items);
     try {
         yield createdOrder.save();
     }

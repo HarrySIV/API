@@ -33,7 +33,7 @@ const orderSchema = new mongoose_1.Schema({
         {
             _id: Number,
             itemPrice: Number,
-            items: [{ type: Item_1.itemSchema, _id: false }],
+            items: [{ type: Item_1.itemSchema }],
             quantity: Number,
             type: { type: String },
         },
